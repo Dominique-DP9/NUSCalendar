@@ -52,7 +52,7 @@ const Calendar = () => {
 
     useEffect(() => {
         getTime()
-    },[])
+    },[event])
 
   return (
     <>
@@ -60,6 +60,7 @@ const Calendar = () => {
     <div className="Calendar">
         <DayContainter
                 events = {event}
+                times = {time || []}
         />    
         {/* <EventCard {...event}></EventCard>
         <EventCard {...event}></EventCard> */}

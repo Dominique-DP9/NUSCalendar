@@ -3,6 +3,7 @@
 import EventCard from '../EventCard/EventCard.tsx'
 import React, { useState, useEffect } from 'react'
 import { useEvent } from '../../services/useEvent.tsx'
+import { Header } from '../Header/Header.tsx'
 import DayContainter from '../DayContainer/DayContainer.tsx'
 import './Calendar.css'
 
@@ -55,13 +56,11 @@ const Calendar = () => {
 
   return (
     <>
+    <Header />
     <div className="Calendar">
-        Calendar
-        <div>Timeline (insert calendar here)</div> 
-        <div> card card </div>
         <DayContainter
                 events = {event}
-            />    
+        />    
         {/* <EventCard {...event}></EventCard>
         <EventCard {...event}></EventCard> */}
         {/* <EventCard */}

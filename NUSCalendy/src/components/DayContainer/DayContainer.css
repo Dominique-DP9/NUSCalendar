@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playwrite+IT+Moderna:wght@100..400&display=swap");
 
 .day-container {
-    background-color: #FAEDCB;
+    background-color: rgb(255, 251, 251);
     margin: auto;
     padding: 10px;
     width: 50%;
     border-radius: 5px;
+    border: 1px solid rgb(235, 235, 235);
 }
 
 .day-title {
@@ -19,20 +20,36 @@
 
 .event {
     width: 100%;
-    padding: 5px;
+
+    padding: 20px;
     border: none;
     margin: 5px;
     background-color: #cbe6fa;
     border-radius: 5px;
     box-shadow: 0px 0px 0p;
     transition: transform 0.3s ease-in-out;
+    text-align: left;
 }
 
 .event:hover {
     transform: scale(1.05);
+    background-color: #a3d1f3;
 }
 
 .event:active {
     background-color: #8fcdfb;
+}
+
+.event-title {
+    padding-bottom: 15px;
+    font-weight: 600;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.event-description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 

@@ -42,8 +42,8 @@ const DayContainer = ({ events }: { events: EventProp[] }) => {
                         //.filter((event) => event.time == "Monday")
                             .map((event) => {
                             return <button className="event" onClick={() => { }}>
-                                        <div>{event.title}</div>
-                                        {/* <div>{event.description}</div> */}
+                                        <div className="event-title">{event.title}</div>
+                                        <div className="event-description">{event.description}</div> 
                                     </button>
                         })} 
                 </div>

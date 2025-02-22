@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react'
 import.meta.env.VITE_API_URL
-=======
-// import { useState, useEffect } from 'react'
-// import.meta.env.VITE_API_URL
->>>>>>> 4faf7f07e28ba331236f0a33205628b67f4c3afc
 
 export const useEvent = (eventID: number) => {
   // const [tasks, setTasks] = useState([])

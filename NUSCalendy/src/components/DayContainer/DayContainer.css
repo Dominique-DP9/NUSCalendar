@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playwrite+IT+Moderna:wght@100..400&display=swap");
+
+.day-container {
+    background-color: #FAEDCB;
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.day-title {
+    margin-left: 5px;
+    font-family: "Indie Flower", serif;
+}
+
+.event-container {
+
+}
+
+.event {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    margin: 5px;
+    background-color: #cbe6fa;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0p;
+    transition: transform 0.3s ease-in-out;
+}
+
+.event:hover {
+    transform: scale(1.05);
+}
+
+.event:active {
+    background-color: #8fcdfb;
+}
+

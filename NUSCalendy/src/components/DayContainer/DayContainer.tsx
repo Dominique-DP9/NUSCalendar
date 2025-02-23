@@ -34,9 +34,10 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
                     <div className="event-container">
                         {
                             events
-                                .filter((event) => event.time == time && 
-                                    (event.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                                    event.description.toLowerCase().includes(searchTerm.toLowerCase())))
+                                .filter((event) => event.time == time 
+                                    // && (event.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                    // event.description.toLowerCase().includes(searchTerm.toLowerCase()))
+                                )
                                 .map((event) => {
                                     return <button className="event" onClick={() => {handleButtonClick(event)}}>
                                         <div className="event-title">{event.title}</div>

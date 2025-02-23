@@ -28,7 +28,7 @@ export interface EventProp {
 //     desc: "I love dancing!!!",
 //   }
 const Calendar = () => {
-  const { fetchEvents, } = useEvent(0);
+  const { fetchEvents } = useEvent(0);
   const [event, setEvents] = useState<EventProp[]>([])
   const [time, setTime] = useState<string[]>()
   const [sortOldest, setSortOldest] = useState<boolean>(true)

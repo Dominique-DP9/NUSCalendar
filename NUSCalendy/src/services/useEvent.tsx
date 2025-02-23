@@ -20,6 +20,21 @@ export const useEvent = (eventID: number) => {
     
   }
 
+  const fetchCats = async () => {
+    //const sortMethod = queryObject ? `${queryObject.sort}` : ""
+    try {
+      const res = await fetch(`${API_URL}/categories`) 
+      const data = await res.json()
+      if (!res.ok) throw new Error(`Error: ${res.status}`)
+      // console.log(data)
+      return data 
+    } catch (error){
+      console.error("Fetch Events Error:", error)
+      return null
+    }
+    
+  }
+
   // const deleteTask = async (id: number) => {
   //   const res = await fetch(`${process.env.REACT_APP_PATH}/${id}`, {
   //     method: 'DELETE',
@@ -31,6 +46,7 @@ export const useEvent = (eventID: number) => {
 
   return {
     fetchEvents,
+    fetchCats,
     //addTask,
     //deleteTask,
     //tasks

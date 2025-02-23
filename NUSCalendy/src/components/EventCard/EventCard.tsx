@@ -7,7 +7,7 @@ type Event = {
   title: string,
   author: string,
   eventDate: string,
-  createdDate: string,x
+  createdDate: string,
   img: string,
   desc: string,
   setECardVisible: any,

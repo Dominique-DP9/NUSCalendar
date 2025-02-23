@@ -22,6 +22,7 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
         setECardVisible(!eCardVisible)
     }
 
+    console.log(searchTerm)
     return <>
     {
         times.map((time) => {
@@ -52,15 +53,14 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
     }
     {eCardVisible &&
         <EventCard
-        id = {eventCard?.id}
-        title = {eventCard?.title}
-        author = {eventCard?.title}
-        eventDate = {eventCard?.time}
-        createdDate = {eventCard?.time}
-        img = {eventCard?.title}
-        desc = {eventCard?.description}
-        setECardVisible={setECardVisible}
-    />
+            id={eventCard?.id}
+            title={eventCard?.title}
+            author={eventCard?.title}
+            eventDate={eventCard?.time}
+            createdDate={eventCard?.time}
+            img={eventCard?.title}
+            desc={eventCard?.description}
+            setECardVisible={setECardVisible}    />
     }
     </>
 }

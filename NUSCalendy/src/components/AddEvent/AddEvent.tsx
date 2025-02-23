@@ -4,15 +4,21 @@ import { Button, FormControl, InputLabel, MenuItem, OutlinedInput, Select, TextF
 import axios from "axios";
 
 function AddEvent() {
-    const API_URL: string | undefined = import.meta.env.VITE_API_URL;
+    type Category = {
+        name: string,
+    }
+
+    const API_URL = import.meta.env.VITE_API_URL;
     const [title, setTitle] = useState<string>("");
     const [description, setDescription] = useState<string>("");
-    const [categories, setCategories] = useState([]);
-    const [category, setCategory] = useState();
+    const [categories, setCategories] = useState<Category[]>([]);
+    const [category, setCategory] = useState<Category>();
     const navigate = useNavigate();
 
+
+
     // On submitting form, send POST request to server with the post data
-    async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         if(!category) {
@@ -90,9 +96,9 @@ function AddEvent() {
                             id="demo-simple-select"
                             // value={sortOption}
                             label="Category"
-                            onChange={e => setCategory(e.target.value)}
+                            onChange={e => setCategory(e.target.value as Category)}
                             >
-                                {categories.map((category => <MenuItem value={category.id} key={category.id}>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</MenuItem>))}
+                                {categories.map((category => <MenuItem value={category.name}>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</MenuItem>))}
                             </Select>
                         </FormControl>
                         <div>

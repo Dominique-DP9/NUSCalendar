@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import './EventCard.css'
-
+import closeImage from "NUSCalendy/src/assets/close-circle-svgrepo-com.svg"
 
 type Event = {
   id: number,
@@ -11,6 +11,7 @@ type Event = {
   createdDate: string,
   img: string,
   desc: string,
+  setECardVisible: any,
 }
 
 const EventCard: React.FC<Event> = ({
@@ -21,7 +22,11 @@ const EventCard: React.FC<Event> = ({
   createdDate,
   img,
   desc,
+  setECardVisible,
 }) => {
+  const handleClose = () => {
+    setECardVisible(false)
+  }
 
   return (
     <div className ="card-bg">
@@ -36,6 +41,9 @@ const EventCard: React.FC<Event> = ({
                 <path fill="currentColor" d="M12 2L15 8H21L17 12L19 18L12 14L5 18L7 12L3 8H9L12 2Z" />
               </svg>
             </div>
+            <button type="button" className="btn-close" aria-label="Close" onClick={() => {handleClose()}}>
+              <svg width="20" height="20" viewBox="0 0 40 40"><path d="M 10,10 L 30,30 M 30,10 L 10,30" stroke="black" stroke-width="4" /></svg>
+            </button>
           </div>
 
           {/* Card Details */}

@@ -58,9 +58,10 @@
 }
 
 .cat {
-    background-color: #8fcdfb;
+    width: 120px;
     border-radius: 5px;
     padding: 10px;
+    text-align: center;
 }
 
 .event-description {

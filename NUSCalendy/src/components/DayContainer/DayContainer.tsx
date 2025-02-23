@@ -6,7 +6,7 @@ import { formatTime } from "../../utilities/formatDay.ts"
 import EventCard from '../EventCard/EventCard.tsx'
 import { useEvent } from '../../services/useEvent.tsx'
 
-const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], times: string[], searchTerm: string }) => {
+const DayContainer = ({ events, times, selectedCategories }: { events: EventProp[], times: string[], selectedCategories: any[] }) => {
     const {fetchCats} = useEvent(0)
     const colors = ['rgb(255, 105, 97, 0.2)', 'rgb(255, 180, 128, 0.2)', 'rgb(248, 243, 141, 0.2)', 'rgb(66, 214, 164, 0.2)', 'rgb(8, 202, 209, 0.2)', 'rgb(89, 173, 246, 0.2)',
         'rgb(157, 148, 255, 0.2)', 'rgb(199, 128, 232, 0.2)']
@@ -26,7 +26,7 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
     const getCategories = async () => {
         const result = await fetchCats()
         setCategories(result)
-        console.log(result)
+        console.log("catgeories", result)
     }
 
     useEffect(() => {
@@ -37,6 +37,7 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
         setEventCard(event)
         setECardVisible(!eCardVisible)
     }
+    console.log(selectedCategories)
 
     return <>
     {
@@ -47,7 +48,7 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
                     <div className="event-container">
                         {
                             events
-                                .filter((event) => event.time == time 
+                                .filter((event) => (event.time == time && selectedCategories.length > 0 )
                                     // && (event.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                                     // event.description.toLowerCase().includes(searchTerm.toLowerCase()))
                                 )

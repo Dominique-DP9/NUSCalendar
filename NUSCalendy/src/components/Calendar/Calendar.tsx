@@ -31,14 +31,15 @@ const Calendar = () => {
   const { fetchEvents } = useEvent(0);
   const [event, setEvents] = useState<EventProp[]>([])
   const [time, setTime] = useState<string[]>()
-  const [sortOldest, setSortOldest] = useState<boolean>(true)
+  const [sortOldest, setSortOldest] = useState<boolean>(false)
   const [searchTerm, setSearchTerm] = useState<string>("")
+  const [selectedCategories, setSelectedCategories] = useState<any[]>([]);
 
   const getEvent = async () => {
     try {
       const result = await fetchEvents(searchTerm)
-      const arr = result.filter((e:EventProp) => e.title?.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      e.description?.toLowerCase().includes(searchTerm.toLowerCase()))
+      const arr = result.filter((e:EventProp) => (e.title?.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      e.description?.toLowerCase().includes(searchTerm.toLowerCase())))
       setEvents(arr)
       console.log(result)
     } catch(error) {
@@ -48,7 +49,7 @@ const Calendar = () => {
 
   useEffect(() => {
     getEvent()
-  }, [searchTerm])
+  }, [searchTerm, selectedCategories])
 
   const getTime = async () => {
     const arr = event.map((e) => e.time)
@@ -76,7 +77,10 @@ const Calendar = () => {
           <Search 
             setSearchTerm = {setSearchTerm}
           />
-          <SortBar />
+          <SortBar 
+            selectedCategories = {selectedCategories}
+            setSelectedCategories={setSelectedCategories}
+          />
         </div>
         <div style={{ gridColumn: '2 / span 2' }}>
           <SortTime 
@@ -86,7 +90,7 @@ const Calendar = () => {
           <DayContainter
             events={event}
             times={time || []}
-            searchTerm = {searchTerm}
+            selectedCategories = {selectedCategories}
           />
         </div>
         {/* <EventCard {...event}></EventCard>

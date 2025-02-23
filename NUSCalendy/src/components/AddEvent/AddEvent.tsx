@@ -54,7 +54,7 @@ function AddEvent() {
     return (
         <div className="MainContainer">
             <div className="Content">
-                <div className="CreatePostContainer">
+                <div className="AddEventContainer">
                     <h1>Create new post</h1>
                     <FormControl
                         onSubmit={handleSubmit}

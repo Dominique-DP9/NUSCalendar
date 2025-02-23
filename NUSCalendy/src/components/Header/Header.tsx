@@ -1,6 +1,7 @@
 import React from 'react'
 import './Header.css'
 import { Avatar } from '@mui/material'
+import { HeaderMenu } from './HeaderMenu'
 
 export const Header = () => {
     return (
@@ -11,7 +12,7 @@ export const Header = () => {
                 <div className="title">
                     <h1>NUSCalendy</h1>
                 </div>
-                <div className="menu">Menu</div>
+                <HeaderMenu></HeaderMenu>
             </div>
         </>
     )

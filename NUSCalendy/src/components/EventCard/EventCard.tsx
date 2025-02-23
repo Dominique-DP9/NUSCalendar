@@ -26,9 +26,13 @@ const EventCard: React.FC<Event> = ({
 }) => {
   const handleClose = () => {
     setECardVisible(false)
+    console.log(id)
+    console.log(author)
+    console.log(createdDate)
   }
 
   return (
+   
     <div className ="card-bg">
       <div className="card-container" >
         {/* Card body */}

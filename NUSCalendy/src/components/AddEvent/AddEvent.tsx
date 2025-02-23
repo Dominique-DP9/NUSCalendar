@@ -31,7 +31,7 @@ function AddEvent() {
                 },
             })
 
-            navigate(`/posts/${response.data.id}`);
+            navigate(`/`);
         } catch(e) {
             alert("Failed to create event");
         }

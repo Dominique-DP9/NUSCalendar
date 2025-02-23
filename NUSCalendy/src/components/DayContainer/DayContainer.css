@@ -1,26 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playwrite+IT+Moderna:wght@100..400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Itim&family=Playwrite+IT+Moderna:wght@100..400&display=swap');
 
 .day-container {
     background-color: rgb(255, 251, 251);
-    margin: auto;
-    padding: 10px;
-    width: 50%;
+    margin: 10px;
+    padding: 10px 18px;
+    width: 90%;
     border-radius: 5px;
     border: 1px solid rgb(235, 235, 235);
 }
 
 .day-title {
     margin-left: 5px;
-    font-family: "Indie Flower", serif;
+    font-family: "Itim", serif;
 }
 
 .event-container {
-
+    max-width: 100%;
 }
 
 .event {
     width: 100%;
-
     padding: 20px;
     border: none;
     margin: 5px;
@@ -29,11 +28,13 @@
     box-shadow: 0px 0px 0p;
     transition: transform 0.3s ease-in-out;
     text-align: left;
+
 }
 
 .event:hover {
     transform: scale(1.05);
     background-color: #a3d1f3;
+    cursor: pointer;
 }
 
 .event:active {

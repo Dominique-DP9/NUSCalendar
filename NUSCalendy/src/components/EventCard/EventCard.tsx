@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import './EventCard.css'
-// import closeImage from "NUSCalendy/src/assets/close-circle-svgrepo-com.svg"
 
 type Event = {
   id: number,

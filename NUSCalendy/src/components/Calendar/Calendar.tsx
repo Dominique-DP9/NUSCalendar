@@ -37,12 +37,12 @@ const Calendar = () => {
   const getEvent = async () => {
     try {
       const result = await fetchEvents(searchTerm)
-      const arr = result.filter((e:EventProp) => e.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      e.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      const arr = result.filter((e:EventProp) => e.title?.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      e.description?.toLowerCase().includes(searchTerm.toLowerCase()))
       setEvents(arr)
-      console.log(arr)
-    } catch {
-      console.log('Error fetching Events')
+      console.log(result)
+    } catch(error) {
+      console.log(error)
     }
   }
 

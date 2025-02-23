@@ -4,7 +4,8 @@ import { createRoot } from 'react-dom/client'
 // import App from './App.tsx'
 import Calendar from './components/Calendar/Calendar.tsx'
 // import EventCard from './components/EventCard/EventCard.tsx'
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from './components/Routes/Routes.tsx';
 
 // const event = {
 //     id: 1,
@@ -16,11 +17,16 @@ import Calendar from './components/Calendar/Calendar.tsx'
 //     desc: "I love dancing!!!",
 //   }
 
+const router = createBrowserRouter(routes);
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     {/* <App /> */}
-    <Calendar />
+    {/* <Calendar /> */}
     {/* <EventCard {...event} /> */}
+    {/* Use routing to Calendar */}
+    <RouterProvider router={router} />
+
     
   </StrictMode>,
 )

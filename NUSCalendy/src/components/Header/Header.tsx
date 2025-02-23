@@ -15,7 +15,6 @@ export const Header = () => {
                     <Button><AddIcon/> Add Event</Button>
                     <AccountMenu></AccountMenu>
                 </div>
-                
             </div>
         </>
     )

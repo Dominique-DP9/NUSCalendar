@@ -28,22 +28,22 @@ export const useEvent = (eventID: number) => {
     return data
   }
 
-  const addEvent = async (event: { title: any; description: any, time: string }) => {
-    const newEvent = {
-      event: {
-        title: event.title,
-        description: event.description || "",
-        time: "",
-      }
-    }
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(newEvent),
-    })
-  }
+  // const addEvent = async (event: { title: any; description: any, time: string }) => {
+  //   const newEvent = {
+  //     event: {
+  //       title: event.title,
+  //       description: event.description || "",
+  //       time: "",
+  //     }
+  //   }
+  //   const res = await fetch(API_URL, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-type': 'application/json',
+  //     },
+  //     body: JSON.stringify(newEvent),
+  //   })
+  // }
 
   // const deleteTask = async (id: number) => {
   //   const res = await fetch(`${process.env.REACT_APP_PATH}/${id}`, {

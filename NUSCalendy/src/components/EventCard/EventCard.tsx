@@ -1,14 +1,14 @@
 'use client'
 import React from 'react'
 import './EventCard.css'
-import closeImage from "NUSCalendy/src/assets/close-circle-svgrepo-com.svg"
+// import closeImage from "NUSCalendy/src/assets/close-circle-svgrepo-com.svg"
 
 type Event = {
   id: number,
   title: string,
   author: string,
   eventDate: string,
-  createdDate: string,
+  createdDate: string,x
   img: string,
   desc: string,
   setECardVisible: any,

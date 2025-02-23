@@ -1,12 +1,12 @@
 import './SortTime.css'
 
-export const SortTime = ({handleSortTime}) => {
+export const SortTime = ({sortOldest,handleSortTime}) => {
     return (
         <button
             className="sortTimeButt"
             onClick = {() => {handleSortTime()}}
         >
-            Sort by time
+            Sort by time {sortOldest ? "(oldest)" : "(latest)"}
         </button>
     )
 }

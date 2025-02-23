@@ -3,7 +3,6 @@
 // import EventCard from '../EventCard/EventCard.tsx'
 import { useState, useEffect } from 'react'
 import { useEvent } from '../../services/useEvent.tsx'
-import { Header } from '../Header/Header.tsx'
 import DayContainter from '../DayContainer/DayContainer.tsx'
 import './Calendar.css'
 import { SortBar } from '../Sidebar/SortBar/SortBar.tsx'
@@ -29,7 +28,7 @@ export interface EventProp {
 //     desc: "I love dancing!!!",
 //   }
 const Calendar = () => {
-  const { fetchEvents, } = useEvent(0);
+  const { fetchEvents } = useEvent(0);
   const [event, setEvents] = useState<EventProp[]>([])
   const [time, setTime] = useState<string[]>()
   const [sortOldest, setSortOldest] = useState<boolean>(true)

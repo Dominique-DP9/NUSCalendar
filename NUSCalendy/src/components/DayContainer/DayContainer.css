@@ -20,16 +20,13 @@
 
 .event {
     width: 100%;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     border: none;
     margin: 5px;
-    background-color: #cbe6fa;
     border-radius: 5px;
-    box-shadow: 0px 0px 0p;
+    box-shadow: 0px 0px 0px;
     transition: transform 0.3s ease-in-out;
     text-align: left;
-    display: grid;
-    grid-template-columns: 2;
 }
 
 .event:hover {
@@ -42,11 +39,28 @@
     background-color: #8fcdfb;
 }
 
+.event-header {
+    display: grid;
+    grid-template-columns: auto auto;
+}
 .event-title {
-    padding-bottom: 15px;
     font-weight: 600;
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: left;
+    align-self: center;
+}
+
+.event-cat {
+    display: flex;
+    justify-content: right;
+}
+
+.cat {
+    background-color: #8fcdfb;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .event-description {

@@ -31,7 +31,7 @@ function AddEvent() {
         }
 
         try {
-            const response = await axios.post(`${API_URL}/events`, eventData, {
+            axios.post(`${API_URL}/events`, eventData, {
                 headers: {
                     "Content-Type": "application/json",
                 },

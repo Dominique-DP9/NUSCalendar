@@ -19,6 +19,7 @@
     align-items: center;
     position: relative;
     animation: dropTop .3s linear;
+    border-radius: 5px;
     /* flex-direction: column; */
 }
 
@@ -59,6 +60,20 @@
     height: 20%;
     /* overflow: hidden; */
     position: relative;
+    display: flex;
+}
+
+.btn-close {
+    border: none;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    display: flex;
+}
+
+.btn-close:hover {
+    background-color: rgb(244, 243, 243);
+    border-radius: 5px;
 }
 
 .cardImg {

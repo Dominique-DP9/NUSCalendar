@@ -36,9 +36,11 @@ const Calendar = () => {
 
   const getEvent = async () => {
     try {
-      const result = await fetchEvents()
-      setEvents(result)
-      console.log(result)
+      const result = await fetchEvents(searchTerm)
+      const arr = result.filter((e:EventProp) => e.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      e.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      setEvents(arr)
+      console.log(arr)
     } catch {
       console.log('Error fetching Events')
     }
@@ -46,7 +48,7 @@ const Calendar = () => {
 
   useEffect(() => {
     getEvent()
-  }, [])
+  }, [searchTerm])
 
   const getTime = async () => {
     const arr = event.map((e) => e.time)
@@ -57,7 +59,6 @@ const Calendar = () => {
       timeArr.sort((a, b) => new Date(b).getTime() - new Date(a).getTime())
     } 
     setTime(timeArr)
-    console.log(time)
   }
 
   useEffect(() => {
@@ -85,6 +86,7 @@ const Calendar = () => {
           <DayContainter
             events={event}
             times={time || []}
+            searchTerm = {searchTerm}
           />
         </div>
         {/* <EventCard {...event}></EventCard>

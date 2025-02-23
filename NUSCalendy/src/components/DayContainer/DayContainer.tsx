@@ -22,6 +22,7 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
         setECardVisible(!eCardVisible)
     }
 
+    console.log(searchTerm)
     return <>
     {
         times.map((time) => {
@@ -34,9 +35,10 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
                     <div className="event-container">
                         {
                             events
-                                .filter((event) => event.time == time && 
-                                    (event.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                                    event.description.toLowerCase().includes(searchTerm.toLowerCase())))
+                                .filter((event) => event.time == time 
+                                    // && (event.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                    // event.description.toLowerCase().includes(searchTerm.toLowerCase()))
+                                )
                                 .map((event) => {
                                     return <button className="event" onClick={() => {handleButtonClick(event)}}>
                                         <div className="event-title">{event.title}</div>
@@ -51,15 +53,14 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
     }
     {eCardVisible &&
         <EventCard
-        id = {eventCard?.id}
-        title = {eventCard?.title}
-        author = {eventCard?.title}
-        eventDate = {eventCard?.time}
-        createdDate = {eventCard?.time}
-        img = {eventCard?.title}
-        desc = {eventCard?.description}
-        setECardVisible={setECardVisible}
-    />
+            id={eventCard?.id}
+            title={eventCard?.title}
+            author={eventCard?.title}
+            eventDate={eventCard?.time}
+            createdDate={eventCard?.time}
+            img={eventCard?.title}
+            desc={eventCard?.description}
+            setECardVisible={setECardVisible}    />
     }
     </>
 }

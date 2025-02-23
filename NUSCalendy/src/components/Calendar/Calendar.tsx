@@ -32,7 +32,7 @@ const Calendar = () => {
   const [event, setEvents] = useState<EventProp[]>([])
   const [time, setTime] = useState<string[]>()
   const [sortOldest, setSortOldest] = useState<boolean>(true)
-  const [, setSearchTerm] = useState<string>("")
+  const [searchTerm, setSearchTerm] = useState<string>("")
 
   const getEvent = async () => {
     try {
@@ -71,7 +71,6 @@ const Calendar = () => {
 
   return (
     <>
-      <Header />
       <div className="Calendar">
         <div style={{ gridColumn: '1 / span 1' }}>
           <Search 

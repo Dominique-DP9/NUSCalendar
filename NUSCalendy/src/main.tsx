@@ -22,7 +22,7 @@ const router = createBrowserRouter(routes);
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     {/* <App /> */}
-    <Calendar />
+    {/* <Calendar /> */}
     {/* <EventCard {...event} /> */}
     {/* Use routing to Calendar */}
     <RouterProvider router={router} />

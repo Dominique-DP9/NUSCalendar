@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import "./DayContainer.css"
 import { EventProp } from "../Calendar/Calendar.tsx"
-import { formatDay } from "../../utilities/formatDay.ts"
+import { formatTime } from "../../utilities/formatDay.ts"
 import EventCard from '../EventCard/EventCard.tsx'
 
 const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], times: string[], searchTerm: string }) => {
@@ -11,27 +11,22 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
         title: "",
         time: "",
         description: "",
+        category: "",
     }
     const [eventCard, setEventCard] = useState<EventProp>(emptyEvent)
     const [eCardVisible, setECardVisible] = useState<boolean>(false)
-
-    const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
     const handleButtonClick = (event: EventProp) => {
         setEventCard(event)
         setECardVisible(!eCardVisible)
     }
 
-    console.log(searchTerm)
     return <>
     {
         times.map((time) => {
-            const day = new Date(time).getDay()
-            const date = new Date(time).getDate()
-            const month = new Date(time).getMonth()
             return <>
                 <div className="day-container">
-                    <div className="day-title">{formatDay(day)}, {date} {months[month]}</div>
+                    <div className="day-title">{formatTime(time)}</div>
                     <div className="event-container">
                         {
                             events
@@ -41,7 +36,10 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
                                 )
                                 .map((event) => {
                                     return <button className="event" onClick={() => {handleButtonClick(event)}}>
-                                        <div className="event-title">{event.title}</div>
+                                        <div>
+                                            <div className="event-title">{event.title}</div>
+                                            <div className="event-cat">{event.category}</div>
+                                        </div>
                                         <div className="event-description">{event.description}</div>
                                     </button>
                                 })
@@ -53,14 +51,15 @@ const DayContainer = ({ events, times, searchTerm }: { events: EventProp[], time
     }
     {eCardVisible &&
         <EventCard
-            id={eventCard?.id}
-            title={eventCard?.title}
-            author={eventCard?.title}
-            eventDate={eventCard?.time}
-            createdDate={eventCard?.time}
-            img={eventCard?.title}
-            desc={eventCard?.description}
-            setECardVisible={setECardVisible}    />
+        id = {eventCard?.id}
+        title = {eventCard?.title}
+        author = {eventCard?.title}
+        eventDate = {eventCard?.time}
+        createdDate = {eventCard?.time}
+        img = {eventCard?.title}
+        desc = {eventCard?.description}
+        setECardVisible={setECardVisible}
+    />
     }
     </>
 }

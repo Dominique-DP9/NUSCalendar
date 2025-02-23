@@ -16,6 +16,7 @@ export interface EventProp {
   title: string;
   time: string;
   description: string;
+  category: string;
 }
 
 // const event = {
@@ -81,6 +82,7 @@ const Calendar = () => {
         <div style={{ gridColumn: '2 / span 2' }}>
           <SortTime 
             handleSortTime = {handleSortTime}
+            sortOldest={sortOldest}
           />
           <DayContainter
             events={event}

@@ -8,7 +8,7 @@ export const useEvent = (eventID: number) => {
   const fetchEvents = async (searchTerm: string) => {
     //const sortMethod = queryObject ? `${queryObject.sort}` : ""
     try {
-      const res = await fetch(`${API_URL}/?q=${searchTerm}`) 
+      const res = await fetch(`${API_URL}/events/?q=${searchTerm}`) 
       const data = await res.json()
       if (!res.ok) throw new Error(`Error: ${res.status}`)
       // console.log(data)
@@ -19,31 +19,6 @@ export const useEvent = (eventID: number) => {
     }
     
   }
-  
-  
-  const fetchOneEvent = async (id: number) => {
-    console.log("data")
-    const res = await fetch(`${API_URL}/${id}`)
-    const data = await res.json()
-    return data
-  }
-
-  // const addEvent = async (event: { title: any; description: any, time: string }) => {
-  //   const newEvent = {
-  //     event: {
-  //       title: event.title,
-  //       description: event.description || "",
-  //       time: "",
-  //     }
-  //   }
-  //   const res = await fetch(API_URL, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-type': 'application/json',
-  //     },
-  //     body: JSON.stringify(newEvent),
-  //   })
-  // }
 
   // const deleteTask = async (id: number) => {
   //   const res = await fetch(`${process.env.REACT_APP_PATH}/${id}`, {
@@ -56,7 +31,6 @@ export const useEvent = (eventID: number) => {
 
   return {
     fetchEvents,
-    fetchOneEvent,
     //addTask,
     //deleteTask,
     //tasks

@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // import './index.css'
 // import App from './App.tsx'
-import Calendar from './components/Calendar/Calendar.tsx'
 // import EventCard from './components/EventCard/EventCard.tsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import routes from './components/Routes/Routes.tsx';

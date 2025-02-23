@@ -3,7 +3,6 @@
 // import EventCard from '../EventCard/EventCard.tsx'
 import { useState, useEffect } from 'react'
 import { useEvent } from '../../services/useEvent.tsx'
-import { Header } from '../Header/Header.tsx'
 import DayContainter from '../DayContainer/DayContainer.tsx'
 import './Calendar.css'
 import { SortBar } from '../Sidebar/SortBar/SortBar.tsx'

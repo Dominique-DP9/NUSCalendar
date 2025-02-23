@@ -48,7 +48,7 @@ const DayContainer = ({ events, times, selectedCategories }: { events: EventProp
                     <div className="event-container">
                         {
                             events
-                                .filter((event) => (event.time == time && selectedCategories.length > 0 )
+                                .filter((event) => (event.time == time)
                                     // && (event.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                                     // event.description.toLowerCase().includes(searchTerm.toLowerCase()))
                                 )

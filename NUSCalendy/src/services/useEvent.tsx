@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
-import.meta.env.VITE_API_URL
+// import { useState, useEffect } from 'react'
+// import.meta.env.VITE_API_URL
 
 export const useEvent = (eventID: number) => {
   // const [tasks, setTasks] = useState([])
+  console.log(eventID)
   const API_URL = import.meta.env.VITE_API_URL
   const fetchEvents = async () => {
     //const sortMethod = queryObject ? `${queryObject.sort}` : ""
@@ -18,6 +19,7 @@ export const useEvent = (eventID: number) => {
     }
     
   }
+  
   
   const fetchOneEvent = async (id: number) => {
     console.log("data")

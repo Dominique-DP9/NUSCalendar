@@ -1,7 +1,7 @@
 // import React from 'react'
 // import Day from '../DayContainer/DayContainer.tsx'
-import EventCard from '../EventCard/EventCard.tsx'
-import React, { useState, useEffect } from 'react'
+// import EventCard from '../EventCard/EventCard.tsx'
+import { useState, useEffect } from 'react'
 import { useEvent } from '../../services/useEvent.tsx'
 import { Header } from '../Header/Header.tsx'
 import DayContainter from '../DayContainer/DayContainer.tsx'
@@ -28,11 +28,11 @@ export interface EventProp {
 //     desc: "I love dancing!!!",
 //   }
 const Calendar = () => {
-  const { fetchEvents, fetchOneEvent } = useEvent(0);
+  const { fetchEvents, } = useEvent(0);
   const [event, setEvents] = useState<EventProp[]>([])
   const [time, setTime] = useState<string[]>()
   const [sortOldest, setSortOldest] = useState<boolean>(true)
-  const [searchTerm, setSearchTerm] = useState<string>("")
+  const [, setSearchTerm] = useState<string>("")
 
   const getEvent = async () => {
     try {

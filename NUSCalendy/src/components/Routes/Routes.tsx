@@ -5,12 +5,10 @@ const routes = [
   {
     path: "/",
     element: <Calendar />,
-    children: [
-      {
-        path: "/new",
-        element: <AddEvent />,
-      },
-    ]
+  },
+  {
+    path: "/new",
+    element: <AddEvent />,
   }
 ];
 
